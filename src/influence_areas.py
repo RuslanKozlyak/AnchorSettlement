@@ -33,6 +33,7 @@ def _build_influence_areas(towns, accessibility_matrix, min_influence_score, rad
     node_names = towns.set_index('id')['name']
     agglomerations = []
 
+    levels = sorted(towns['level'].unique())
 
     for level_index, level in enumerate(reversed(levels)):
         max_time = 80 - 10 * level_index
